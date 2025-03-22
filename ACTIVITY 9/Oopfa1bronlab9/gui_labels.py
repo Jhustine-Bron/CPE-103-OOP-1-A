@@ -20,10 +20,10 @@ class App(QWidget):
         self.setWindowIcon(QIcon('rubble_paw_patrol_canine_patrol_icon_263827.ico'))
 
         self.textboxlbl = QLabel("Hello World! ", self)
-        self.textboxlbl.move(125,25)
+        self.textboxlbl.move(125,115)
 
         self.textboxlbl1 = QLabel("This program is written in Pycharm ", self)
-        self.textboxlbl1.move(68, 50)
+        self.textboxlbl1.move(68, 145)
 
         self.show()
 if __name__=="__main__":

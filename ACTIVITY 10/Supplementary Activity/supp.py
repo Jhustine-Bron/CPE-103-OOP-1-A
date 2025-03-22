@@ -7,7 +7,7 @@ window.geometry("400x250")
 window.configure(bg="#D1F1C7")
 
 
-ttk.Label(window, text="Choose your Birth Date", font=("Times New Roman", 15), background="#D1F1C7").pack(pady=5)
+ttk.Label(window, text="Choose your Birth Date", font=("Consolas", 15, ), background="#D1F1C7").pack(pady=5)
 
 
 selection_mode = tk.StringVar(value="combo")
@@ -19,16 +19,16 @@ frame_selection = tk.Frame(window, bg="#D1F1C7")
 frame_selection.pack(pady=5)
 
 
-ttk.Label(frame_selection, text="Select your Birth Day: ", background="#D1F1C7").grid(row=0, column=0, sticky="w")
-ttk.Label(frame_selection, text="Select your Birth Month: ", background="#D1F1C7").grid(row=1, column=0, sticky="w")
-ttk.Label(frame_selection, text="Select your Birth Year: ", background="#D1F1C7").grid(row=2, column=0, sticky="w")
+ttk.Label(frame_selection, text="Select your Birth Day: ", background="#D1F1C7", font = "Consolas" ).grid(row=0, column=0, sticky="w")
+ttk.Label(frame_selection, text="Select your Birth Month: ", background="#D1F1C7", font = "Consolas").grid(row=1, column=0, sticky="w")
+ttk.Label(frame_selection, text="Select your Birth Year: ", background="#D1F1C7", font = "Consolas").grid(row=2, column=0, sticky="w")
 
 
 day_combo = ttk.Combobox(frame_selection, width=5, textvariable=day_var, values=[str(i) for i in range(1, 32)])
 month_combo = ttk.Combobox(frame_selection, width=10, textvariable=month_var, values=['January', 'February', 'March', 'April',
                                                                                      'May', 'June', 'July', 'August', 'September',
                                                                                      'October', 'November', 'December'])
-year_combo = ttk.Combobox(frame_selection, width=6, textvariable=year_var, values=[str(i) for i in range(1980, 2025)])
+year_combo = ttk.Combobox(frame_selection, width=6, textvariable=year_var, values=[str(i) for i in range(1900, 2025)])
 
 day_combo.grid(row=0, column=1, padx=5, pady=2)
 month_combo.grid(row=1, column=1, padx=5, pady=2)
@@ -48,7 +48,7 @@ def toggle_input():
     else:
 
         frame_selection.pack_forget()
-        manual_entry.set(f"{day_var.get()} {month_var.get()} {year_var.get()}")  # Pre-fill manual entry
+        manual_entry.set(f"{day_var.get()} {month_var.get()} {year_var.get()}")
         manual_entry_field.pack()
 
 radio_frame = tk.Frame(window, bg="#D1F1C7")
@@ -58,7 +58,9 @@ radio_frame.pack(pady=5)
 
 
 def show_birthdate():
-    birthdate = manual_entry.get() if selection_mode.get() == "manual" else f"{day_var.get()} {month_var.get()} {year_var.get()}"
+    birthdate = manual_entry.get() \
+        if selection_mode.get() == "manual" \
+        else f"{day_var.get()} {month_var.get()} {year_var.get()}"
     messagebox.showinfo("Your Birth Date", f"You selected: {birthdate}")
 
 
