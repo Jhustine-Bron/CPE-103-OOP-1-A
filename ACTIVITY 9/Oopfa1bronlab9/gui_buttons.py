@@ -21,11 +21,11 @@ class App(QWidget):
 
         self.button = QPushButton("Click me!", self)
         self.button.setToolTip("You've hovered over me!")
-        self.button.move(100,70)
+        self.button.move(110,95)
 
-        self.button2 = QPushButton("Click me too!", self)
+        self.button2 = QPushButton("Register", self)
         self.button2.setToolTip("This button does nothing yet...")
-        self.button2.move(100, 110)
+        self.button2.move(110, 145)
 
         self.show()
 
