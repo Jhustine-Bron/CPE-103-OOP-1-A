@@ -1,0 +1,4 @@
+This is my analysis.
+The purpose of this activity is to practice file handling in Python.
+We learn how to open, read, write, and print text files line by line.
+
